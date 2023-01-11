@@ -125,4 +125,4 @@ else:
     st.caption('Frecuency of members by level Aggregator & Operator')
     st.write(df_bbdd_selection_pie)
     with st.expander("Chek out the raw data"):
-    st.table(df_bbdd_selection) 
+         st.write(df_bbdd_selection) 
