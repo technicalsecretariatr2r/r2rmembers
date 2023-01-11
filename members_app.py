@@ -43,7 +43,7 @@ with tab3:
    st.markdown('Busca ser una plataforma interactiva para explorar las características de los miembros que están vinculados a los partners, y por ende vinculados a la campaña R2R. Todo esto para facilitar la toma de decisiones en el diseño de la futura encuesta Proceed.')
    
 with tab4:
-   st.markdown('-Se generó una nueva base de datos con toda la información que entregaron los Parners sobre sus miembros.\n- Cuando no existía información disponible para identificar y categorizar a un miembros, se googlearon aquellos miembros y se completó la información pendiente.\n- Se desarrolló una categorización de los miembros en diferentes niveles.\n- Se clarificó como Aggregators aquellos Members que englobal la relación entre varias otras organizaciones.\n- Se clarificó como Operators aquellos Members que en sí mismos ejecturan un plan de acción sobre algun sistema de impacto')
+   st.markdown('Para el análisis de la lista de miembro se desarrollaron los siguientes pados:\- Se generó una nueva base de datos con toda la información que entregaron los Parners sobre sus miembros.\n- Cuando no existía información disponible para identificar y categorizar a un miembros, se googlearon aquellos miembros y se completó la información pendiente.\n- Se desarrolló una categorización de los miembros en diferentes niveles.\n- Se clasificó como Aggregators aquellos Members que engloban la relación entre varias otras organizaciones.\n- Se clasificó como Operators aquellos Members que en sí mismos ejecturan un plan de acción sobre algun sistema de impacto.\n Este análisis no categoriza a los Partners como Aggregators o Operators. Sólo lo hace con los miembros reportados.')
 
 st.markdown("""----""")
 
