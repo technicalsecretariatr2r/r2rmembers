@@ -29,7 +29,7 @@ df_bbdd = df_bbdd.sort_values(by=['ID_MASTER', 'Member_Type_2'])
 #__________________________________________________________________________________________________________________________________________________________________
 # MAIN PAGE
 #__________________________________________________________________________________________________________________________________________________________________
-st.subheader('Introduction')
+st.subheader("Introduction to R2R partner's Members Analysis")
 
 tab1, tab2, tab3, tab4 = st.tabs(["¿Qué es esto?", "¿Qué información tiene?", "¿Hacia dónde va?","Proceso de análisis"])
 
@@ -51,7 +51,7 @@ st.markdown("""----""")
 # SIDEBAR
 #__________________________________________________________________________________________________________________________________________________________________
 st.sidebar.image("R2R_RGB_PINK.png", width=150)
-st.sidebar.subheader("R2R partner's members analysis.\n Experimental phase")
+#st.sidebar.subheader("R2R partner's members analysis.\n Experimental phase")
 
 #Multiselector for partner selection
 partner_selection = st.sidebar.multiselect("Select partners", options=df_bbdd["Official_Name"].unique(),)
@@ -116,13 +116,13 @@ df_bbdd_selection_pie = df_bbdd_selection_pie.groupby(['Aggregator_operator'])['
 
 
 if  len(partner_selection)+len(aggregator_index) == 0:
-    st.caption(' ⬅️ Check out the sidebar to select information. You can select multiples options.')
+    st.markdown(' ⬅️ Check out the sidebar to select information. You can select multiples options.')
 else:
-    st.caption('Explore the tree map by selecting any analitical category. It is possible to zoom in for getting into the details')
+    st.markdown('Explore the tree map by selecting any analitical category. It is possible to zoom in for getting into the details')
     st.plotly_chart(fig)
-    st.caption('Explore the sunburst map by selecting any analitical category. It is possible to zoom in for getting into the details')
+    st.markdown('Explore the sunburst map by selecting any analitical category. It is possible to zoom in for getting into the details')
     st.plotly_chart(fig1)
-    st.caption('Frecuency of members by level Aggregator & Operator')
+    st.markdown('Frecuency of members by level Aggregator & Operator')
     st.write(df_bbdd_selection_pie)
     with st.expander("Chek out the raw data"):
          st.write(df_bbdd_selection) 
