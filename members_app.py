@@ -27,11 +27,30 @@ df_bbdd = df_bbdd.sort_values(by=['ID_MASTER', 'Member_Type_2'])
 
 
 #__________________________________________________________________________________________________________________________________________________________________
+# MAIN PAGE
+#__________________________________________________________________________________________________________________________________________________________________
+with st.expander("Introducción"):
+            st.markdown('<div style="text-align: justify;">**¿Qué es esto?**</div>', unsafe_allow_html=True)
+            st.markdown('<div style="text-align: justify;">Un visualizador de los datos de Miembros reportados por Partners R2R. Su función es facilitar la comprensión de los tipos de miembros que tienen los Partners de R2R y así idealmente reconocer caminos para asegurar que Partners puedan reportar metricas robustas a la campaña.</div>', unsafe_allow_html=True)
+
+            st.markdown('<div style="text-align: justify;">**¿Qué información tiene?**</div>', unsafe_allow_html=True)
+            st.markdown('<div style="text-align: justify;"></div>', unsafe_allow_html=True)
+
+            st.markdown('<div style="text-align: justify;">**¿Hacia dónde va?**</div>', unsafe_allow_html=True)
+            st.markdown('<div style="text-align: justify;"></div>', unsafe_allow_html=True)
+
+            st.markdown('<div style="text-align: justify;">**Proceso de análisis**</div>', unsafe_allow_html=True)
+            st.markdown('<div style="text-align: justify;"></div>', unsafe_allow_html=True)
+
+
+
+
+
+#__________________________________________________________________________________________________________________________________________________________________
 # SIDEBAR
 #__________________________________________________________________________________________________________________________________________________________________
 st.sidebar.image("R2R_RGB_PINK.png", width=150)
 st.sidebar.subheader("R2R partner's members analysis.\n Experimental phase")
-
 
 #Multiselector for partner selection
 partner_selection = st.sidebar.multiselect("Select partners", options=df_bbdd["Official_Name"].unique(),)
