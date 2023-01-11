@@ -34,7 +34,7 @@ st.subheader("Introduction to R2R partner's Members Analysis")
 tab1, tab2, tab3, tab4 = st.tabs(["¿Qué es esto?", "¿Qué información tiene?", "¿Hacia dónde va?","Proceso de análisis"])
 
 with tab1:
-   st.markdown('Un visualizador de los datos de Miembros reportados por Partners R2R. Su función es facilitar la comprensión de los tipos de miembros que tienen los Partners de R2R y así idealmente reconocer caminos para asegurar que Partners puedan reportar metricas robustas a la campaña')
+   st.markdown('Un visualizador de los datos de miembros reportados por Partners R2R. Su función es facilitar la comprensión de los tipos de miembros que tienen los Partners de R2R y así idealmente reconocer caminos para asegurar que Partners puedan reportar metricas robustas a la campaña')
             
 with tab2:
    st.markdown('Una base de datos de los miembros reportados por los Partners de R2R en General Information Survey. Todo clasificado por categorías y tipos de miembros, también los miembros se idenificaron como Operators y Agreggators.')
@@ -43,7 +43,7 @@ with tab3:
    st.markdown('Busca ser una plataforma interactiva para explorar las características de los miembros que están vinculados a los partners, y por ende vinculados a la campaña R2R. Todo esto para facilitar la toma de decisiones en el diseño de la futura encuesta Proceed.')
    
 with tab4:
-   st.markdown('Para el análisis de la lista de miembro se desarrollaron los siguientes pasos:\n- Se generó una nueva base de datos con toda la información que entregaron los Parners sobre sus miembros.\n- Cuando no existía información disponible para identificar y categorizar a un miembros, se googlearon aquellos miembros y se completó la información pendiente.\n- Se desarrolló una categorización de los miembros en diferentes niveles.\n- Se clasificó como Aggregators aquellos Members que engloban la relación entre varias otras organizaciones.\n- Se clasificó como Operators aquellos Members que en sí mismos ejecturan un plan de acción sobre algun sistema de impacto.\n Este análisis no categoriza a los Partners como Aggregators o Operators. Sólo lo hace con los miembros reportados.')
+   st.markdown('Para el análisis de la lista de miembros se desarrollaron los siguientes pasos:\n- Se generó una nueva base de datos con toda la información que entregaron los Parners sobre sus miembros.\n- Cuando no existía información disponible para identificar y categorizar a un miembros, se googlearon aquellos miembros y se completó la información pendiente.\n- Se desarrolló una categorización de los miembros en diferentes niveles.\n- Se clasificó como Aggregators aquellos Members que engloban la relación entre varias otras organizaciones.\n- Se clasificó como Operators aquellos Members que ejecutan un plan de acción sobre algun sistema de impacto principalmente de una forma autónoma.\n Este análisis no categoriza a los Partners como Aggregators o Operators. Sólo lo hace con los miembros reportados.')
 
 st.markdown("""----""")
 
