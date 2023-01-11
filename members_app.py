@@ -9,7 +9,7 @@ import re
 #__________________________________________________________________________________________________________________________________________________________________
 # Dashboard structure
 #__________________________________________________________________________________________________________________________________________________________________
-st.set_page_config(page_title="R2R Members", page_icon="🔦", layout="wide", initial_sidebar_state="auto")
+st.set_page_config(page_title="R2R Members", page_icon="🔦", layout="wide", initial_sidebar_state="expanded")
 
 # Hide index when showing a table. CSS to inject contained in a string
 hide_table_row_index = """
@@ -29,7 +29,7 @@ df_bbdd = df_bbdd.sort_values(by=['ID_MASTER', 'Member_Type_2'])
 #__________________________________________________________________________________________________________________________________________________________________
 # MAIN PAGE
 #__________________________________________________________________________________________________________________________________________________________________
-st.subheader("Introduction to R2R partner's Members Analysis")
+st.subheader("Introduction")
 
 tab1, tab2, tab3, tab4 = st.tabs(["¿Qué es esto?", "¿Qué información tiene?", "¿Hacia dónde va?","Proceso de análisis"])
 
@@ -51,7 +51,7 @@ st.markdown("""----""")
 # SIDEBAR
 #__________________________________________________________________________________________________________________________________________________________________
 st.sidebar.image("R2R_RGB_PINK.png", width=150)
-#st.sidebar.subheader("R2R partner's members analysis.\n Experimental phase")
+st.sidebar.subheader("R2R partner's members analysis.\n Experimental phase")
 
 #Multiselector for partner selection
 partner_selection = st.sidebar.multiselect("Select partners", options=df_bbdd["Official_Name"].unique(),)
