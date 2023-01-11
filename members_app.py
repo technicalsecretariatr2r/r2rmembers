@@ -9,7 +9,7 @@ import re
 #__________________________________________________________________________________________________________________________________________________________________
 # Dashboard structure
 #__________________________________________________________________________________________________________________________________________________________________
-st.set_page_config(page_title="R2R Members", page_icon="🔦", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="R2R Members", page_icon="🔦", layout="wide", initial_sidebar_state="auto")
 
 # Hide index when showing a table. CSS to inject contained in a string
 hide_table_row_index = """
@@ -29,6 +29,7 @@ df_bbdd = df_bbdd.sort_values(by=['ID_MASTER', 'Member_Type_2'])
 #__________________________________________________________________________________________________________________________________________________________________
 # MAIN PAGE
 #__________________________________________________________________________________________________________________________________________________________________
+st.subheader('Introduction')
 
 tab1, tab2, tab3, tab4 = st.tabs(["¿Qué es esto?", "¿Qué información tiene?", "¿Hacia dónde va?","Proceso de análisis"])
 
@@ -44,6 +45,7 @@ with tab3:
 with tab4:
    st.markdown('-Se generó una nueva base de datos con toda la información que entregaron los Parners sobre sus miembros.\n- Cuando no existía información disponible para identificar y categorizar a un miembros, se googlearon aquellos miembros y se completó la información pendiente.\n- Se desarrolló una categorización de los miembros en diferentes niveles.\n- Se clarificó como Aggregators aquellos Members que englobal la relación entre varias otras organizaciones.\n- Se clarificó como Operators aquellos Members que en sí mismos ejecturan un plan de acción sobre algun sistema de impacto')
 
+st.markdown("""----""")
 
 #__________________________________________________________________________________________________________________________________________________________________
 # SIDEBAR
@@ -114,11 +116,13 @@ df_bbdd_selection_pie = df_bbdd_selection_pie.groupby(['Aggregator_operator'])['
 
 
 if  len(partner_selection)+len(aggregator_index) == 0:
-    st.caption('')
+    st.caption(' ⬅️ Check out the sidebar to select information. You can select multiples options.')
 else:
-    st.caption('Explore the tree map by selecting any analitical category')
+    st.caption('Explore the tree map by selecting any analitical category. It is possible to zoom in for getting into the details')
     st.plotly_chart(fig)
-    st.caption('Explore the sunburst map by selecting any analitical category')
+    st.caption('Explore the sunburst map by selecting any analitical category. It is possible to zoom in for getting into the details')
     st.plotly_chart(fig1)
     st.caption('Frecuency of members by level Aggregator & Operator')
     st.write(df_bbdd_selection_pie)
+    with st.expander("Chek out the raw data"):
+    st.table(df_bbdd_selection) 
