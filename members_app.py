@@ -68,8 +68,6 @@ if all_options:
     aggregator_index = df_bbdd_partner["Aggregator_operator"].unique().tolist()
 df_bbdd_selection = df_bbdd_partner.query('Aggregator_operator == @aggregator_index')  #Filter by source of information
 
-#______________________________
-st.subheader('Results of members identification analysis')
 
 #______________________________
 
@@ -79,18 +77,6 @@ total_members_type  = df_bbdd_selection['Member_Type'].nunique()
 total_members_Categories  = df_bbdd_selection['Member_Type_2'].nunique()
 #total_members_aggregator = df_bbdd_selection['Aggregator_operator'].value_counts()['Aggregator']
 #total_members_operator = df_bbdd_selection['Aggregator_operator'].value_counts()['Operator']
-
-col1, col2, col3, col4 = st.columns((1.5,1,1,1))   #https://blog.streamlit.io/introducing-new-layout-options-for-streamlit/
-
-col1.metric("Partners reporting members list",total_partners)
-col4.metric("Total Members",total_members)
-col3.metric("Members types",total_members_type)
-col2.metric("Members categories",total_members_Categories)
-#col1.metric("Nº Aggregators",total_members_aggregator)
-#col2.metric("Nº Operators",total_members_operator)
-st.caption('<div style="text-align: left">Source: General Information survey</h1></div>', unsafe_allow_html=True)
-st.text("")
-
 
 #___________________________________________________________________________________________________________________________________________________________
 # TREEAMAP AND SUNBURST
@@ -116,13 +102,23 @@ df_bbdd_selection_pie = df_bbdd_selection_pie.groupby(['Aggregator_operator'])['
 
 
 if  len(partner_selection)+len(aggregator_index) == 0:
-    st.markdown(' ⬅️ Check out the sidebar to select information. You can select multiples options.')
+            st.markdown(' ⬅️ Check out the sidebar to select information. You can select multiples options.')
 else:
-    st.markdown('Explore the tree map by selecting any analitical category. It is possible to zoom in for getting into the details')
-    st.plotly_chart(fig)
-    st.markdown('Explore the sunburst map by selecting any analitical category. It is possible to zoom in for getting into the details')
-    st.plotly_chart(fig1)
-    st.markdown('Frecuency of members by level Aggregator & Operator')
-    st.write(df_bbdd_selection_pie)
-    with st.expander("Chek out the raw data"):
-         st.write(df_bbdd_selection) 
+            st.subheader('Results of members identification analysis')
+            col1, col2, col3, col4 = st.columns((1.5,1,1,1))   #https://blog.streamlit.io/introducing-new-layout-options-for-streamlit/
+            col1.metric("Partners reporting members list",total_partners)
+            col4.metric("Total Members",total_members)
+            col3.metric("Members types",total_members_type)
+            col2.metric("Members categories",total_members_Categories)
+            #col1.metric("Nº Aggregators",total_members_aggregator)
+            #col2.metric("Nº Operators",total_members_operator)
+            st.caption('<div style="text-align: left">Source: General Information survey</h1></div>', unsafe_allow_html=True)
+            st.text("")
+            st.markdown('Explore the tree map by selecting any analitical category. It is possible to zoom in for getting into the details')
+            st.plotly_chart(fig)
+            st.markdown('Explore the sunburst map by selecting any analitical category. It is possible to zoom in for getting into the details')
+            st.plotly_chart(fig1)
+            st.markdown('Frecuency of members by level Aggregator & Operator')
+            st.write(df_bbdd_selection_pie)
+            with st.expander("Chek out the raw data"):
+                        st.write(df_bbdd_selection) 
