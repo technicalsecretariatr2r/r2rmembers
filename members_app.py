@@ -29,15 +29,24 @@ df_bbdd = df_bbdd.sort_values(by=['ID_MASTER', 'Member_Type_2'])
 #__________________________________________________________________________________________________________________________________________________________________
 # MAIN PAGE
 #__________________________________________________________________________________________________________________________________________________________________
-st.markdown("Introducción")
-st.markdown('<div style="text-align: justify;">**¿Qué es esto?**</div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;">Un visualizador de los datos de Miembros reportados por Partners R2R. Su función es facilitar la comprensión de los tipos de miembros que tienen los Partners de R2R y así idealmente reconocer caminos para asegurar que Partners puedan reportar metricas robustas a la campaña.</div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;">**¿Qué información tiene?**</div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;"></div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;">**¿Hacia dónde va?**</div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;"></div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;">**Proceso de análisis**</div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;"></div>', unsafe_allow_html=True)
+
+tab1, tab2, tab3, tab4 = st.tabs(["¿Qué es esto?", "¿Qué información tiene?", "¿Hacia dónde va?","Proceso de análisis"])
+
+with tab1:
+   st.header("¿Qué es esto?")
+   st.markdown('Un visualizador de los datos de Miembros reportados por Partners R2R. Su función es facilitar la comprensión de los tipos de miembros que tienen los Partners de R2R y así idealmente reconocer caminos para asegurar que Partners puedan reportar metricas robustas a la campaña')
+            
+with tab2:
+   st.header("¿Qué información tiene?")
+   st.markdown('Una base de datos de los miembros reportados por los Partners de R2R en General Information Survey. Todo clasificado por categorías y tipos de miembros, también los miembros se idenificaron como Operators y Agreggators.')
+            
+with tab3:
+   st.header("¿Hacia dónde va?")
+   st.markdown('Busca ser una plataforma interactiva para explorar las características de los miembros que están vinculados a los partners, y por ende vinculados a la campaña R2R. Todo esto para facilitar la toma de decisiones en el diseño de la futura encuesta Proceed.')
+   
+with tab4:
+   st.header("Proceso de análisis")
+   st.markdown('-Se generó una nueva base de datos con toda la información que entregaron los Parners sobre sus miembros.\n- Cuando no existía información disponible para identificar y categorizar a un miembros, se googlearon aquellos miembros y se completó la información pendiente.\n- Se desarrolló una categorización de los miembros en diferentes niveles.\n- Se clarificó como Aggregators aquellos Members que englobal la relación entre varias otras organizaciones.\n- Se clarificó como Operators aquellos Members que en sí mismos ejecturan un plan de acción sobre algun sistema de impacto')
 
 
 
