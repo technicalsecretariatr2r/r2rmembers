@@ -29,7 +29,7 @@ df_bbdd = df_bbdd.sort_values(by=['ID_MASTER', 'Member_Type_2'])
 #__________________________________________________________________________________________________________________________________________________________________
 # MAIN PAGE
 #__________________________________________________________________________________________________________________________________________________________________
-st.subheader("Introduction")
+st.subheader("Introduction to R2R partner's members analysis.")
 
 tab1, tab2, tab3, tab4 = st.tabs(["¿Qué es esto?", "¿Qué información tiene?", "¿Hacia dónde va?","Proceso de análisis"])
 
@@ -102,7 +102,7 @@ df_bbdd_selection_pie = df_bbdd_selection_pie.groupby(['Aggregator_operator'])['
 
 
 if  len(partner_selection)+len(aggregator_index) == 0:
-            st.markdown(' ⬅️ Check out the sidebar to select information. You can select multiples options.')
+            st.markdown(' ⬅️ Check out the sidebar to select and display information. You can select multiples options.')
 else:
             st.subheader('Results of members identification analysis')
             col1, col2, col3, col4 = st.columns((1.5,1,1,1))   #https://blog.streamlit.io/introducing-new-layout-options-for-streamlit/
